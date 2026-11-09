@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+
+#define MAX 8//定义杨辉三角的最大行数
+
+void yanghui(int n,int(*arr)[MAX])
+{
+	arr[0][0] = 1;
+	arr[1][0] = 1;
+	arr[1][1] = 1;
+	for (int i = 2;i < n;i++)
+	{
+		for (int j = 0;j < i + 1;j++)
+		{
+			if (j == 0 || j == i)
+			{
+				arr[i][j] = 1;
+			}
+			else
+			{
+				arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+			}
+		}
+	}
+}
+void print_yanghui(int n, int(*arr)[MAX])
+{
+	for (int i = 0;i < n;i++)
+	{
+		for (int j = 0;j < i + 1;j++)
+		{
+			printf("%d", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+int main()
+{
+	int n = MAX;
+	int arr[MAX][MAX];
+	yanghui(n, arr);//调用函数
+	print_yanghui(n, arr);//打印杨辉三角
+	return 0;
+}
