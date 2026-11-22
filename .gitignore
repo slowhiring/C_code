@@ -1,0 +1,25 @@
+# Visual Studio / MSBuild 构建产物
+.vs/
+x64/
+Debug/
+Release/
+*.user
+*.suo
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.exp
+*.idb
+*.tlog
+*.db
+*.ifc
+*.dt.d.json
+*.dt.module.json
+*.FileListAbsolute.txt
+
+# 本地临时备份
+*.bak
+*.tmp
